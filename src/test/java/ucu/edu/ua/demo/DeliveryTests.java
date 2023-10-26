@@ -14,7 +14,7 @@ import java.util.List;
 
 public class DeliveryTests {
 
-    private List<Item> client_order;
+    private List<Item> clientOrder;
     private final double price = 80;
 
     private PostDeliveryStrategy deliveryByPost;
@@ -26,22 +26,19 @@ public class DeliveryTests {
         deliveryByPost = new PostDeliveryStrategy();
         deliveryByDHL = new DHLDeliveryStrategy();
 
-        client_order = List.of(
-            new Flower(price, 0.9, FlowerColor.BLUE),
-            new Flower(price, 0.6, FlowerColor.BLUE),
-            new Flower(price, 0.8, FlowerColor.RED),
-            new Flower(price, 0.7, FlowerColor.RED));
+        clientOrder = List.of(new Flower(price, 0.8, FlowerColor.RED),
+                new Flower(price, 0.8, FlowerColor.RED));
 
     }
 
     @Test
     public void testPostDelivery() {
-        Assertions.assertEquals(client_order, deliveryByPost.deliver(client_order));
+        Assertions.assertEquals(clientOrder, deliveryByPost.deliver(clientOrder));
     }
 
     @Test
     public void testDHLDelivery() {
-        Assertions.assertEquals(client_order, deliveryByDHL.deliver(client_order));
+        Assertions.assertEquals(clientOrder, deliveryByDHL.deliver(clientOrder));
     }
 
 }
