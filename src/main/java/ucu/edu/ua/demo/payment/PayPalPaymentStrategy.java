@@ -1,7 +1,7 @@
 package ucu.edu.ua.demo.payment;
 
 
-public class PayPalPaymentStrategy implements Payment{
+public class PayPalPaymentStrategy implements Payment {
 
     @Override
 
