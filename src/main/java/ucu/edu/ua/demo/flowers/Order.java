@@ -7,31 +7,31 @@ import ucu.edu.ua.demo.delivery.Delivery;
 import java.util.List;
 
 public class Order {
-    private Payment a_payment;
-    private Delivery a_delivery;
-    private List<Item> a_order;
+    private Payment aPayment;
+    private Delivery aDelivery;
+    private List<Item> aOrder;
 
-    public Order(List<Item> many_items) {
-        this.a_order = many_items;
+    public Order(List<Item> items) {
+        this.aOrder = items;
     }
 
     public void setPaymentMethod(Payment clientPayment) {
-        this.a_payment = clientPayment;
+        this.aPayment = clientPayment;
     }
 
     public double countPrice() {
-        return a_order.stream().mapToDouble(Item::price).sum();
+        return aOrder.stream().mapToDouble(Item::price).sum();
     }
 
     public void setDeliverStrategy(Delivery clientDelivery) {
-        this.a_delivery = clientDelivery;
+        this.aDelivery = clientDelivery;
     }
 
     public void processingOrder() {
-        if (this.a_payment.pay(countPrice()) == countPrice()) {
+        if (this.aPayment.pay(countPrice()) == countPrice()) {
             System.out.println("The order has been payed");
 
-            this.a_delivery.deliver(this.a_order);
+            this.aDelivery.deliver(this.aOrder);
             System.out.println("The order has been delivered");
         }
         else {
@@ -40,10 +40,10 @@ public class Order {
     }
 
     public void addItem(Item item) {
-        a_order.add(item);
+        aOrder.add(item);
     }
 
     public void deleteItem(Item item) {
-        a_order.remove(item);
+        aOrder.remove(item);
     }
 }
