@@ -1,4 +1,4 @@
-package ua.edu.ucu.apps.demo.flowers;
+package ucu.edu.ua.demo.flowers;
 
 import java.util.List;
 import org.springframework.web.bind.annotation.RestController;
