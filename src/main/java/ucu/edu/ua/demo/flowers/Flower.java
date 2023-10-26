@@ -17,7 +17,8 @@ public class Flower extends Item {
         return price;
     }
 
-    public String getColor() {
-        return color.toString();
+    @Override
+    public String getDescription() {
+        return "Flower";
     }
 }
